@@ -2,6 +2,7 @@ FROM ubuntu:16.04
 
 LABEL "com.scalsec.infra.docker"="ScaleSec GCP Cloud Build Demo - Ubuntu 16.04 Docker base image"
 LABEL "MAINTAINER"="Gordon Young <gordon@scalesec.com>"
+# Iben was here
 
 RUN apt-get update && apt-get -y install ca-certificates
 RUN apt-get -y install locales
