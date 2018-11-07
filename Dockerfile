@@ -1,4 +1,6 @@
-FROM ubuntu:16.04
+FROM ubuntu
+
+#FROM ubuntu:16.04
 
 LABEL "com.scalsec.infra.docker"="ScaleSec GCP Cloud Build Demo - Ubuntu 16.04 Docker base image"
 LABEL "MAINTAINER"="Gordon Young <gordon@scalesec.com>"
@@ -14,6 +16,8 @@ ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
 ENV APACHE_RUN_DIR /var/run/apache2
 ENV APACHE_LOG_DIR /var/log/apache2
+ENV APACHE_PID_FILE /var/run/apache2/apache2$SUFFIX.pid
+ENV APACHE_LOCK_DIR /var/lock/apache2/apache2$SUFFIX
 
 EXPOSE 80
 
@@ -26,6 +30,6 @@ CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 # RUN chmod +x /microscanner
 # fork this repo and edit this next line with your own scanner API key
 # RUN /microscanner 3MTsss_replace_me_ZdddiM
-
+# Dockerfile update with PID and Lock variables
 
 
