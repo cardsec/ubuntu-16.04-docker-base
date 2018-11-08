@@ -23,7 +23,7 @@ EXPOSE 80
 
 CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 
-RUN nmap -pN localhost > /var/www/nmap.txt
+#RUN nmap -pN localhost > /var/www/nmap.txt
 
 # since we are not doing an APT-GET UPGRADE many binary module will be old and have vulnerabilities that 
 # will be found by any decent image scanner
