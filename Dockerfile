@@ -1,6 +1,5 @@
-FROM ubuntu
-
-#FROM ubuntu:16.04
+FROM ubuntu:16.04
+# FROM ubuntu
 
 LABEL "com.scalsec.infra.docker"="ScaleSec GCP Cloud Build Demo - Ubuntu 16.04 Docker base image"
 LABEL "MAINTAINER"="Gordon Young <gordon@scalesec.com>"
