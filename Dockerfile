@@ -19,9 +19,13 @@ ENV APACHE_LOG_DIR /var/log/apache2
 ENV APACHE_PID_FILE /var/run/apache2/apache2.pid
 ENV APACHE_LOCK_DIR /var/lock/apache2
 
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
 EXPOSE 80
 
-CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+CMD apachectl -DFOREGROUND
+
+#CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 
 #RUN nmap -pN localhost > /var/www/nmap.txt
 
