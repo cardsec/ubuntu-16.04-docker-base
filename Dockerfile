@@ -23,7 +23,7 @@ CMD apachectl -DFOREGROUND
 
 #CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 
-CMD ["/usr/bin/nmap"," > ","/var/www/html/nmap.txt"]
+CMD ["/usr/bin/nmap"," localhost ","> ","/var/www/html/nmap.txt"]
 
 # since we are not doing an APT-GET UPGRADE many binary module will be old and have vulnerabilities that 
 # will be found by any decent image scanner
