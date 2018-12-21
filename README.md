@@ -16,13 +16,18 @@ https://cloud.google.com/container-registry/docs/get-image-vulnerabilities
 How to also run tcpdump, create a network, an nginx container … and run some traffic - https://medium.com/@xxradar/how-to-tcpdump-effectively-in-docker-2ed0a09b5406
 
 $ docker network create demo-net
+
 $ docker run -d --network demo-net --name wwwnginx nginx
+
 $ docker run -it --network demo-net dockersec/siege \
       -c 1 http://wwwnginx/
+      
 Now open a new shell and link the TCPdump container
 
 $ docker run -it --net=container:wwwnginx tcpdump
+
 or if you want to specify tcpdump flags and filters
+
 $ docker run -it --net=container:wwwnginx tcpdump tcpdump port 80
 
 14:38:05.095483 IP 86fde53b1869.80 > 08f18be305e8.demo-net.41274: Flags [F.], seq 846, ack 149, win 235, options [nop,nop,TS val 2062442 ecr 2062442], length 0
