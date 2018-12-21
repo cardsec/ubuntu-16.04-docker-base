@@ -19,9 +19,8 @@ $ docker network create demo-net
 
 $ docker run -d --network demo-net --name wwwnginx nginx
 
-$ docker run -it --network demo-net dockersec/siege \
-      -c 1 http://wwwnginx/
-      
+$ docker run -it --network demo-net dockersec/siege -c 1 http://wwwnginx/
+
 Now open a new shell and link the TCPdump container
 
 $ docker run -it --net=container:wwwnginx tcpdump
