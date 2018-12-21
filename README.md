@@ -29,6 +29,17 @@ or if you want to specify tcpdump flags and filters
 
 $ docker run -it --net=container:wwwnginx tcpdump tcpdump port 80
 
+run docker ps to list the processes running and copy the container name…
+
+Use either docker run or use docker exec with the -i (interactive) flag to keep stdin open and -t to allocate a terminal.
+
+docker exec -i -t container_name /bin/bash
+
+Or to run one or many commands:
+
+docker exec -ti my_container sh -c "echo a && echo b"
+
+
 14:38:05.095483 IP 86fde53b1869.80 > 08f18be305e8.demo-net.41274: Flags [F.], seq 846, ack 149, win 235, options [nop,nop,TS val 2062442 ecr 2062442], length 0
 14:38:05.095564 IP 08f18be305e8.demo-net.41274 > 86fde53b1869.80: Flags [F.], seq 149, ack 847, win 247, options [nop,nop,TS val 2062442 ecr 2062442], length 0
 14:38:05.095607 IP 86fde53b1869.80 > 08f18be305e8.demo-net.41274: Flags [.], ack 150, win 235, options [nop,nop,TS val 2062442 ecr 2062442], length 0
