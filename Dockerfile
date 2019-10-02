@@ -8,7 +8,7 @@ LABEL "MAINTAINER"="Gordon Young <gordon@scalesec.com>"
 RUN apt-get update && apt-get -y install ca-certificates
 RUN apt-get -y install locales
 RUN apt-get -y install bash 
-RUN apt-get install -y apache2 nmap tcpdump
+RUN apt-get install -y apache2 nmap tcpdump curl
 RUN mkdir /var/run/apache2
 
 ENV APACHE_RUN_USER www-data
