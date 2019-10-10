@@ -1,8 +1,7 @@
 # FROM ubuntu:16.04
-FROM ubuntu
-
-LABEL "com.scalsec.infra.docker"="ScaleSec GCP Cloud Build Demo - Ubuntu 16.04 Docker base image"
-LABEL "MAINTAINER"="Gordon Young <gordon@scalesec.com>"
+#FROM ubuntu
+FROM cmendibl3/kubeinvaders:latest
+LABEL "MAINTAINER"="Iben Rodriguez <iben.rodriguez@gmail.com>"
 # Iben was here added tcpdump - 12212018
 
 RUN apt-get update && apt-get -y install ca-certificates
@@ -17,6 +16,7 @@ ENV APACHE_RUN_DIR /var/run/apache2
 ENV APACHE_LOG_DIR /var/log/apache2
 # . RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 CMD tcpdump -i eth0 
+CMD curl http://www.google.com:80
 # EXPOSE 80
 # CMD apachectl -DFOREGROUND
 
