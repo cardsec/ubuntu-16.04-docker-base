@@ -1,8 +1,8 @@
-# FROM ubuntu:16.04
+FROM ubuntu:16.04
+# Iben was here - 20220523
 #FROM ubuntu
-FROM cmendibl3/kubeinvaders:latest
+#FROM cmendibl3/kubeinvaders:latest
 LABEL "MAINTAINER"="Iben Rodriguez <iben.rodriguez@gmail.com>"
-# Iben was here added tcpdump - 12212018
 
 RUN apt-get update && apt-get -y install ca-certificates
 RUN apt-get -y install locales
